@@ -40,14 +40,12 @@ class ProductsController < ApplicationController
     redirect_to products_path
   end
 
-
-
   private
     def set_product
       @product = Product.find(params[:id])
     end
 
     def product_params
-      params.expect(product: [ :name, :description, :featured_image ])
+      params.expect(product: [ :name, :description, :featured_image, :inventory_count ])
     end
 end
