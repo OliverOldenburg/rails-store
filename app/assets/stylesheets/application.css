@@ -23,6 +23,71 @@ main {
     margin: 0 auto;
 }
 
+/* General form layout */
+form {
+    max-width: 500px;
+    margin: 1rem auto;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Labels */
+form label {
+    font-weight: bold;
+    margin-bottom: 0.25rem;
+    display: block;
+}
+
+/* Text and number inputs */
+form input[type="text"],
+form input[type="number"],
+form textarea {
+    border: 1px solid #ccc;
+    padding: 0.5rem;
+    border-radius: 4px;
+    width: 100%;
+    font-size: 1rem;
+}
+
+/* File input */
+form input[type="file"] {
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    padding: 0.4rem;
+    background-color: #f9f9f9;
+    cursor: pointer;
+}
+
+/* Submit button */
+form input[type="submit"],
+form button,
+.btn {
+    border: 1px solid #333;
+    background-color: #f0f0f0;
+    color: #333;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    margin-right: 0.5rem;
+}
+
+/* Submit button hover effect */
+form input[type="submit"]:hover,
+form button:hover,
+.btn:hover {
+    background-color: #e0e0e0;
+    border-color: #000;
+}
+
+/* Optional: Make textarea bigger */
+form textarea {
+    min-height: 80px;
+    resize: vertical;
+}
+
 .alert,
 .error {
     color: red;
@@ -42,4 +107,154 @@ section.product img {
     border-radius: 8px;
     flex-basis: 50%;
     max-width: 50%;
+}
+
+/* Top banner styling */
+.topbar {
+    background-color: #333;
+    color: white;
+    padding: 0.75rem 0;
+    margin-bottom: 2rem;
+}
+
+.topbar .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1024px;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+.topbar a,
+.topbar button {
+    color: white;
+    text-decoration: none;
+    margin-left: 1rem;
+}
+
+.topbar a:hover,
+.topbar button:hover {
+    text-decoration: underline;
+}
+
+.topbar .logo a {
+    font-weight: bold;
+    font-size: 1.5rem;
+}
+
+/* Product grid */
+.products-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+}
+
+/* Product card */
+.product-card {
+    border: 1px solid #ddd;
+    padding: 1rem;
+    border-radius: 8px;
+    background: white;
+    text-align: center;
+}
+
+.product-card h2 {
+    margin-top: 0.5rem;
+    font-size: 1.25rem;
+}
+
+.product-card p {
+    font-size: 0.9rem;
+    color: #555;
+}
+
+.product-thumb {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 6px;
+}
+
+/* Show page layout */
+section.product {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+}
+
+.product-image img {
+    max-width: 400px;
+    width: 100%;
+    border-radius: 8px;
+}
+
+.product-info {
+    flex: 1;
+}
+
+.btn-edit,
+.btn-delete {
+    padding: 0.5rem 1rem;
+    margin-right: 0.5rem;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.btn-edit {
+    background-color: #f0ad4e;
+    color: white;
+}
+
+.btn-delete {
+    background-color: #d9534f;
+    color: white;
+}
+
+.product-card:hover {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.2s;
+}
+
+nav a:hover {
+    text-decoration: underline;
+}
+
+/* Buttons styling */
+button,
+input[type="submit"],
+.btn {
+    border: 1px solid #333;
+    background-color: #f0f0f0;
+    color: #333;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    margin-right: 0.5rem;
+}
+
+/* Hover effect for buttons */
+button:hover,
+input[type="submit"]:hover,
+.btn:hover {
+    background-color: #e0e0e0;
+    border-color: #000;
+}
+
+/* Red logout button */
+.nav-links form button {
+    background-color: #d9534f; /* bootstrap-like red */
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    margin-left: 1rem;
+}
+
+.nav-links form button:hover {
+    background-color: #c9302c;
 }

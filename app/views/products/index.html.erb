@@ -1,12 +1,16 @@
-<h1>Products</h1>
 <h1><%= t ".title" %></h1>
-<%= link_to "New Product", new_product_path if authenticated? %>
-<%= link_to "Login", new_session_path unless authenticated? %>
 
-<div id="products">
+<div id="products" class="products-grid">
   <% @products.each do |product| %>
-    <div>
-      <%= link_to product.name, product_path(product.id) %>
+    <div class="product-card">
+      <% if product.featured_image.attached? %>
+        <%= link_to image_tag(product.featured_image, class: "product-thumb"), product_path(product.id) %>
+      <% end %>
+
+      <h2>
+        <%= link_to product.name, product_path(product.id) %>
+      </h2>
+      <p><%= truncate(product.description.to_plain_text, length: 80) %></p>
     </div>
   <% end %>
 </div>

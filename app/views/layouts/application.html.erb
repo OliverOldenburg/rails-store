@@ -26,10 +26,23 @@
   <body>
       <div class="notice"><%= flash[:notice] %></div>
       <div class="alert"><%= flash[:alert] %></div>
-    <nav>
-       <%= link_to "Home", root_path %>
-       <%= button_to "Log out", session_path, method: :delete if authenticated? %>
-    </nav>
+      <nav class="topbar">
+        <div class="container">
+          <div class="logo">
+            <%= link_to "Oliver's Ruby on Rails test store", root_path %>
+          </div>
+
+          <div class="nav-links">
+            <%= link_to "Home", root_path %>
+            <% if authenticated? %>
+              <%= button_to "Log out", session_path, method: :delete %>
+              <%= link_to "New Product", new_product_path %>
+            <% else %>
+              <%= link_to "Login", new_session_path %>
+            <% end %>
+          </div>
+        </div>
+      </nav>
     <main>
         <%= yield %>
     </main>
