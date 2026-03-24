@@ -20,3 +20,7 @@ class Product < ApplicationRecord
     end
   end
 end
+
+
+#ragh this is a commit
+# This is just more stuff to add
