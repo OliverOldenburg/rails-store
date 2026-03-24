@@ -23,3 +23,36 @@
     <% end %>
   </section>
 </section>
+
+<h2>Leave a Review</h2>
+
+<%= form_with model: [@product, @product.reviews.build] do |form| %>
+  <div>
+    <%= form.label :name %>
+    <%= form.text_field :name %>
+  </div>
+
+  <div>
+    <%= form.label :rating %>
+    <%= form.number_field :rating, in: 0..5 %>
+  </div>
+
+  <div>
+    <%= form.label :body, "Review" %>
+    <%= form.text_area :body %>
+  </div>
+
+  <div>
+    <%= form.submit "Submit Review" %>
+  </div>
+<% end %>
+
+<h2>Reviews</h2>
+
+<% @product.reviews.each do |review| %>
+  <div class="review">
+    <strong><%= review.name %></strong>
+    <p>Rating: <%= review.rating %> / 5</p>
+    <p><%= review.body %></p>
+  </div>
+<% end %>
